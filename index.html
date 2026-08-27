@@ -17,7 +17,7 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark titulo-work-sans">
         <div class="container">
             <a class="navbar-brand" href="#">Gestión de pedidos, producción y entregas</a>
         </div>
@@ -25,47 +25,47 @@
 
     <main class="container my-5">
 
-        <h1 class="mb-4">Panel de gestión</h1>
+        <h1 class="mb-4 titulo-poppins">Panel de gestión</h1>
 
         <div class="row g-4">
 
-            <div class="col-12 col-md-6 col-lg-3">
+            <div class="col">
                 <div class="card h-100">
                     <div class="card-body text-center">
-                        <h2>0</h2>
+                        <h2 id= "totalPedidos">0</h2>
                         <p class="mb-0">Pedidos</p>
                     </div>
                 </div>
             </div>
 
-            <div class="col-12 col-md-6 col-lg-3">
+            <div class="col">
                 <div class="card h-100">
                     <div class="card-body text-center">
-                        <h2>0</h2>
+                        <h2 id = "pedidosProduccion">0</h2>
                         <p class="mb-0">En producción</p>
                     </div>
                 </div>
             </div>
 
-            <div class="col-12 col-md-6 col-lg-3">
+            <div class="col">
                 <div class="card h-100">
                     <div class="card-body text-center">
-                        <h2>0</h2>
+                        <h2 id = "pedidosListos">0</h2>
                         <p class="mb-0">Listos</p>
                     </div>
                 </div>
             </div>
 
-            <div class="col-12 col-md-6 col-lg-3">
+            <div class="col">
                 <div class="card h-100">
                     <div class="card-body text-center">
-                        <h2>$0</h2>
+                        <h2 id = "totalVentas">$0</h2>
                         <p class="mb-0">Ventas</p>
                     </div>
                 </div>
             </div>
 
-            <div class="col-12 col-md-6 col-lg-3">
+            <div class="col">
                 <div class="card h-100">
                     <div class="card-body text-center">
                         <h2>0</h2>
@@ -74,6 +74,109 @@
                 </div>
 
         </div>
+
+        <!-- Fin del row del dashboard -->
+
+        <section class="mt-5">
+
+            <h2 class="mb-3 titulo-poppins">Nuevo pedido</h2>
+
+            <form id="formPedido" class="card card-body">
+
+                <div class="row g-3">
+
+                    <div class="col-12 col-md-6">
+                        <label for="cliente" class="form-label">Cliente</label>
+                        <input
+                            type="text"
+                            id="cliente"
+                            class="form-control"
+                            placeholder="Nombre del cliente"
+                        >
+                    </div>
+
+                    <div class="col-12 col-md-6">
+                        <label for="producto" class="form-label">Producto</label>
+                        <input
+                            type="text"
+                            id="producto"
+                            class="form-control"
+                            placeholder="Ej: Torta cumpleaños"
+                        >
+                    </div>
+
+                    <div class="col-12 col-md-4">
+                        <label for="cantidad" class="form-label">Cantidad</label>
+                        <input
+                            type="number"
+                            id="cantidad"
+                            class="form-control"
+                            min="1"
+                        >
+                    </div>
+
+                    <div class="col-12 col-md-4">
+                        <label for="total" class="form-label">Total</label>
+                        <input
+                            type="number"
+                            id="total"
+                            class="form-control"
+                            min="0"
+                        >
+                    </div>
+
+                    <div class="col-12 col-md-4">
+                        <label for="fechaEntrega" class="form-label">Fecha de entrega</label>
+                        <input
+                            type="date"
+                            id="fechaEntrega"
+                            class="form-control"
+                        >
+                    </div>
+
+                </div>
+
+                <button type="submit" class="btn btn-dark mt-3">
+                    Registrar pedido
+                </button>
+
+                <div id="mensaje" class="mt-3"></div>
+
+            </form>
+
+        </section>
+
+    <!-- Fin del formulario de nuevo pedido      -->
+        
+        <section class="mt-5">
+
+            <h2 class="mb-3 titulo-poppins">Pedidos</h2>
+
+            <div class="table-responsive">
+
+                <table class="table table-striped align-middle">
+
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Cliente</th>
+                            <th>Producto</th>
+                            <th>Cantidad</th>
+                            <th>Entrega</th>
+                            <th>Total</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="tablaPedidos"></tbody>
+
+                </table>
+
+            </div>
+
+    </section>
+
+    <!-- Fin de la sección mostrar pedidos pedidos -->
 
     </main>
 
